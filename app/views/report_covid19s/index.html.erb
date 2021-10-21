@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Report Covid19s</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Collection date</th>
+      <th>Received date</th>
+      <th>Reported date</th>
+      <th>Report ID</th>
+      <th>Patient</th>
+	  <th>HN</th>
+      <th>AN</th>
+	  
+      <th>Hospital name</th>
+      <th>Physician name</th>
+      <th>Accepted sample</th>
+      <th>Sample type</th>
+      <th>Result</th>
+      <th>Target N1</th>
+      <th>Target N2</th>
+      <th>Target RP</th>
+
+      <th>Token</th>
+      <th>Checksum</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @report_covid19s.each do |report_covid19| %>
+      <tr>
+        <td><%= report_covid19.collection_date %></td>
+        <td><%= report_covid19.received_date %></td>
+		<td><%= link_to report_covid19.report_id, report_covid19  %></td>
+        <td><%= report_covid19.reported_date %></td>
+        <td><%= report_covid19.patient_name %></td>
+        <td><%= report_covid19.patient_hn %></td>
+        <td><%= report_covid19.patient_an %></td>
+		
+        <td><%= report_covid19.hospital_name %></td>
+        <td><%= report_covid19.physician_name %></td>
+        <td><%= report_covid19.accepted_sample %></td>
+        <td><%= report_covid19.sample_type %></td>
+        <td><%= report_covid19.result %></td>
+        
+		<td><%= report_covid19.target_n1 %></td>
+        <td><%= report_covid19.target_n2 %></td>
+        <td><%= report_covid19.target_rp %></td>
+		
+      
+
+        <td><%= report_covid19.token %></td>
+        <td><%= report_covid19.checksum %></td>
+        <td><%= link_to 'Show', report_covid19 %></td>
+        <td><%= link_to 'Edit', edit_report_covid19_path(report_covid19) %></td>
+        <td><%= link_to 'Destroy', report_covid19, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report Covid19', new_report_covid19_path %>

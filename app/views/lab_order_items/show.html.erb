@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lab order:</strong>
+  <%= @lab_order_item.lab_order_id %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @lab_order_item.module_id %>
+</p>
+
+<p>
+  <strong>Module name:</strong>
+  <%= @lab_order_item.module_name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @lab_order_item.status %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @lab_order_item.start_at %>
+</p>
+
+<p>
+  <strong>Stop at:</strong>
+  <%= @lab_order_item.stop_at %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @lab_order_item.note %>
+</p>
+
+<p>
+  <strong>Transaction item:</strong>
+  <%= @lab_order_item.transaction_item_id %>
+</p>
+
+<%= link_to 'Edit', edit_lab_order_item_path(@lab_order_item) %> |
+<%= link_to 'Back', lab_order_items_path %>

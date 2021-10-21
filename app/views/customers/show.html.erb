@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @customer.title %>
+</p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @customer.short %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @customer.zipcode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @customer.website %>
+</p>
+
+<p>
+  <strong>Contact name:</strong>
+  <%= @customer.contact_name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @customer.active %>
+</p>
+
+<p>
+  <strong>Registered at:</strong>
+  <%= @customer.registered_at %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @customer.logo %>
+</p>
+
+<p>
+  <strong>Commercial name:</strong>
+  <%= @customer.commercial_name %>
+</p>
+
+<p>
+  <strong>Commercial address:</strong>
+  <%= @customer.commercial_address %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @customer.tax_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @customer.group.name if @customer.group %>
+</p>
+
+
+<p>
+  <strong>Group:</strong>
+  <%= @customer.user.name if @customer.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

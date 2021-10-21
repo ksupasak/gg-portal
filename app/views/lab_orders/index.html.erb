@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lab Orders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lab_orders.each do |lab_order| %>
+      <tr>
+        <td><%= lab_order.customer_id %></td>
+        <td><%= lab_order.date %></td>
+        <td><%= lab_order.status %></td>
+        <td><%= lab_order.note %></td>
+        <td><%= link_to 'Show', lab_order %></td>
+        <td><%= link_to 'Edit', edit_lab_order_path(lab_order) %></td>
+        <td><%= link_to 'Destroy', lab_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lab Order', new_lab_order_path %>

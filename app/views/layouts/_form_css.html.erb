@@ -1,0 +1,14 @@
+	<script src="/assets/js/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+		
+			$('input').each(function(){
+				input = $(this)
+				if(input.attr("type")=='text')
+					input.addClass("form-control")
+			});
+	})
+	
+</script>

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lab_order_id: MyString
+  module_id: MyString
+  module_name: MyString
+  status: MyString
+  start_at: 2021-08-31 13:07:17
+  stop_at: 2021-08-31 13:07:17
+  note: MyString
+  transaction_item_id: MyString
+
+two:
+  lab_order_id: MyString
+  module_id: MyString
+  module_name: MyString
+  status: MyString
+  start_at: 2021-08-31 13:07:17
+  stop_at: 2021-08-31 13:07:17
+  note: MyString
+  transaction_item_id: MyString

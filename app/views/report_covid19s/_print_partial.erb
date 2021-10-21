@@ -1,0 +1,236 @@
+<%
+
+	@report = @report_covid19
+%>
+<html>
+
+<head>
+	
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-extended.css" rel="stylesheet">
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@100;400&display=swap');
+	
+	v{
+		padding-left:40px;
+		padding-right:40px;
+		border-bottom:1px dashed gray;
+		min-width:100px;
+		  font-size:0.8em;
+		
+	}
+	label{
+		  font-weight: bold;
+		  font-size:0.8em;
+	}
+	</style>
+	
+	<style media="print">
+	h2 {color:#000000;font-size:16px;}
+	p {color:#000000;}
+	body {background-color:#FFFFFF;padding-left:40px;font-size:14px;} 
+	</style>
+	
+</head>
+
+<body style="font-family: 'Sarabun', sans-serif;">
+	<div class="container" style="">
+		
+		<br/>
+	<div class="row">
+	
+	<div class="col-4">
+		<img src="http://localhost:3000/images/gg-logo-full.png" height="100">
+	</div>
+	<div class="col-8" style="font-size:0.8em">
+		<span class="" style="font-size:1.2em"><strong>ใบรายงานทางห้อปฏิบัติการ</strong></span>
+		<br/>
+		ห้องปฏิบัติการศูนย์บริการสุขภาพ
+		<br/>
+		<span class="" style="font-size:1.2em">Grand Genomics, Laboratory</span>
+		<br/>
+		<span class="" style="font-size:0.8em">
+		90/74 หมู่บ้านคาซ่าพรีเมี่ยม อ่อนนุช-วงแหวน ถ.กาญจนาภิเษก <br/>แขวงดอกไม้ เขตประเวศ กรุงเพทมหานคร 10250
+		<br/>
+		โทรศัพท์: (66) 2-9101428, ต่อ 7277 
+		</span>
+	</div>
+	
+	
+		
+	</div >
+		<br/>
+<center>
+	<h2>รายงานผลการตรวจวิเคราะห์เชื้อไวรัสโคโรนา 2019 (SARs-CoV-2)<h2>
+</center>
+<hr style="border:1px solid"/>
+<label>Lab ID : </label><v><%= @report_covid19.report_id%></v>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<label>วันที่ลงทะเบียนรับตัวอย่าง : </label><v><%= @report_covid19.received_date.strftime("%d %b %Y") if @report_covid19.received_date %></v>
+<br/>
+<label>วันที่เก็บตัวอย่าง : </label><v><%= @report_covid19.collection_date.strftime("%d %b %Y") if  @report_covid19.collection_date  %></v>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<label>วันที่รายงานผล : </label><v><%= @report_covid19.reported_date.strftime("%d %b %Y") if @report_covid19.reported_date %></v>
+
+<br/>
+<br/>
+
+<div class="row">
+	<div class="col-12">
+		<label>ชื่อ :</label><v><%=@report.patient_name%></v>
+		&nbsp;&nbsp;&nbsp;&nbsp;<label>HN/ID Code :</label><v><%=@report.patient_hn%></v>
+		<br/>
+		<label>ผู้ส่งตรวจ :</label><v><%=@report.physician_name%></v>
+		&nbsp;&nbsp;&nbsp;&nbsp;<label>โรงพยาบาล :</label><v><%=@report.hospital_name%></v>
+		
+		<br/>	<br/>
+		<label>วิธีการทดสอบ :</label><v><%='Droplet Digital PCR (ddPCR)'%></v>
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;<label>ชนิดตัวอย่าง :</label><v><%=@report.sample_type%></v>
+		
+		
+	</div>
+</div>
+
+<br/>
+
+
+<div class="row">
+	<div class="col-12">
+		ผลการวิเคราะห์
+		
+		<table class="table" style="font-size:0.8em">
+			<thead>
+			<tr>
+			<th>
+			Test Name
+			</th>
+			<th>
+			Measure
+			</th>
+			<th>
+			Condition
+			</th>
+			
+			<th colspan="1">
+			<center>Result</center>
+			</th>
+			
+			
+			</tr>
+			</thead>
+		
+		<tbody>
+		<tr>
+			<td>
+			ddPCR SARs-CoV-2 
+			</td>
+			<td style="font-size:1.2em">	
+			&nbsp;
+			</td>
+			<td>&nbsp;</td>
+			<!-- <td>&nbsp;</td> -->
+			<td rowspan="4" style="font-size:1.4em;" valign="middle"><center><%=@report.result%><br/></center></td>
+		</tr>
+		
+		<tr>
+			<td style="">
+			&nbsp;&nbsp;- Assay N1
+			</td>
+			<td style="font-size:1.0em">	
+			<%=@report.target_n1%>
+			</td>
+			
+			<td>Pos &#8805; 0.1</td>
+			<!-- <td>Positive</td> -->
+			
+		</tr>
+		
+		
+		<tr>
+			<td style="">
+			&nbsp;&nbsp;- Assay N2
+			</td>
+			<td style="font-size:1.0em">	
+			<%=@report.target_n1%>
+			</td>
+			<td>Pos &#8805; 0.1</td>
+		<!-- <td>Positive</td> -->
+		
+		</tr>
+		
+		<tr>
+			<td style="">
+			&nbsp;&nbsp;- Internal Control
+			</td>
+			<td style="font-size:1.0em">	
+			<%=@report.target_n1%>
+			</td>
+			<td>Pos &#8805; 0.2</td>
+		<!-- <td></td> -->
+		
+		</tr>
+		
+		
+		</tbody>
+		
+	</table>
+	</div>
+</div>
+
+<br/>
+
+<div class="row">
+	<div class="col-12" style="font-size:0.8em">
+
+		<label>ชุดน้ำยาตรวจ :</label><v><%='SARS-CoV-2 ddPCR Kit Part Number 12013743, Lot : 21003033'%></v>
+		<br/>
+		<br/>
+		
+		<label>หมายเหตุ :</label>
+		<br/>
+		วิธีการสรุปผลของชุดน้ำยาเมื่อตรวจพบยีน N1 หรือ N2 ที่ค่าปริมาณสารพันธุกรรม copies/ul มีค่า &#8805; 0.1 ให้รายงานผลเป็น "ผลบวก" ซึ่งหมายถึงตรวจพบสารพันธุกรรมของเชื่อ SARs-COV-2 กรณีที่ค่า N1 และ N2 ให้ค่า copies/ul &lt; 0.1 ให้รายงานผลเป็น "ผลลบ" ซึ่งหมายถึง ตรวจไม่พบสารพันธุกรรมของเชื้อ SARs-CoV-2
+	
+	</div>
+	
+</div>
+<br/><br/><br/><br/><br/><br/>
+<div class="row">
+	<div class="col-6">
+		
+		<center>ผู้วิเคราะห์ : <v>นาย......</v><br/>
+			ตำแหน่ง : นักเทคนิคการแพทย์ปฏิบัติการ<br/>
+			<%= @report_covid19.reported_date.strftime("%d %B %Y") %>
+		</center>
+	</div>
+	
+	<div class="col-6">
+		<center>ผู้วิเคราะห์ : <v>นาย......</v><br/>
+			ตำแหน่ง : นักเทคนิคการแพทย์ปฏิบัติการ<br/>
+			<%= @report_covid19.reported_date.strftime("%d %B %Y") %>
+		</center>
+	</div>
+</div>
+
+
+	<div class="col-12" style="position:absolute;bottom:0px">
+		<center>
+			รายงานฉบับนี้รับรองผลเฉพาะตัวอย่างที่ได้รับการทดสอบ<br/>
+			ห้ามนำรายงานนี้ไปทำเพิ่มเติม แก้ไข ประกาศโฆษณา
+		</center>
+	</div>
+	
+	
+
+
+
+
+
+
+</div>
+
+
+
+</html>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lab Order Items</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Lab order</th>
+      <th>Module</th>
+      <th>Module name</th>
+      <th>Status</th>
+      <th>Start at</th>
+      <th>Stop at</th>
+      <th>Note</th>
+      <th>Transaction item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lab_order_items.each do |lab_order_item| %>
+      <tr>
+        <td><%= lab_order_item.lab_order_id %></td>
+        <td><%= lab_order_item.module_id %></td>
+        <td><%= lab_order_item.module_name %></td>
+        <td><%= lab_order_item.status %></td>
+        <td><%= lab_order_item.start_at %></td>
+        <td><%= lab_order_item.stop_at %></td>
+        <td><%= lab_order_item.note %></td>
+        <td><%= lab_order_item.transaction_item_id %></td>
+        <td><%= link_to 'Show', lab_order_item %></td>
+        <td><%= link_to 'Edit', edit_lab_order_item_path(lab_order_item) %></td>
+        <td><%= link_to 'Destroy', lab_order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lab Order Item', new_lab_order_item_path %>

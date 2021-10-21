@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collection_date: 2021-08-31
+  received_date: 2021-08-31
+  reported_date: 2021-08-31
+  hospital_name: MyString
+  physician_name: MyString
+  accepted_sample: false
+  sample_type: MyString
+  result: MyString
+  target_orf1ab: MyString
+  target_n: MyString
+  target_b2m: MyString
+  reported_by: MyString
+  confirmed_by: MyString
+  approved_by: MyString
+  report_id: MyString
+  token: MyString
+  checksum: MyString
+
+two:
+  collection_date: 2021-08-31
+  received_date: 2021-08-31
+  reported_date: 2021-08-31
+  hospital_name: MyString
+  physician_name: MyString
+  accepted_sample: false
+  sample_type: MyString
+  result: MyString
+  target_orf1ab: MyString
+  target_n: MyString
+  target_b2m: MyString
+  reported_by: MyString
+  confirmed_by: MyString
+  approved_by: MyString
+  report_id: MyString
+  token: MyString
+  checksum: MyString

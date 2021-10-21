@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Collection date:</strong>
+  <%= @report_covid19.collection_date %>
+</p>
+
+<p>
+  <strong>Received date:</strong>
+  <%= @report_covid19.received_date %>
+</p>
+
+<p>
+  <strong>Reported date:</strong>
+  <%= @report_covid19.reported_date %>
+</p>
+
+<p>
+  <strong>Patient name:</strong>
+  <%= @report_covid19.patient_name %>
+</p>
+
+<p>
+  <strong>Patient HN:</strong>
+  <%= @report_covid19.patient_hn %>
+</p>
+
+<p>
+  <strong>Paitnet AN:</strong>
+  <%= @report_covid19.patient_an %>
+</p>
+
+
+<p>
+  <strong>Hospital name:</strong>
+  <%= @report_covid19.hospital_name %>
+</p>
+
+<p>
+  <strong>Physician name:</strong>
+  <%= @report_covid19.physician_name %>
+</p>
+
+<p>
+  <strong>Accepted sample:</strong>
+  <%= @report_covid19.accepted_sample %>
+</p>
+
+<p>
+  <strong>Sample type:</strong>
+  <%= @report_covid19.sample_type %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @report_covid19.result %>
+</p>
+
+<p>
+  <strong>Target N1:</strong>
+  <%= @report_covid19.target_n1 %>
+</p>
+
+<p>
+  <strong>Target N2:</strong>
+  <%= @report_covid19.target_n2 %>
+</p>
+
+<p>
+  <strong>Target RP:</strong>
+  <%= @report_covid19.target_rp %>
+</p>
+
+<p>
+  <strong>Reported by:</strong>
+  <%= @report_covid19.reported_by %>
+</p>
+
+<p>
+  <strong>Confirmed by:</strong>
+  <%= @report_covid19.confirmed_by %>
+</p>
+
+<p>
+  <strong>Approved by:</strong>
+  <%= @report_covid19.approved_by %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @report_covid19.report_id %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @report_covid19.token %>
+</p>
+
+<p>
+  <strong>Checksum:</strong>
+  <%= @report_covid19.checksum %>
+</p>
+
+<%= link_to 'Print', "#{@report_covid19.id}/print" %> |
+
+<%= link_to 'Edit', edit_report_covid19_path(@report_covid19) %> |
+<%= link_to 'Back', report_covid19s_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @lab_order.customer_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @lab_order.date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @lab_order.status %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @lab_order.note %>
+</p>
+
+<%= link_to 'Edit', edit_lab_order_path(@lab_order) %> |
+<%= link_to 'Back', lab_orders_path %>

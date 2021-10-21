@@ -1,0 +1,113 @@
+<%= form_with(model: report_covid19) do |form| %>
+  <% if report_covid19.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report_covid19.errors.count, "error") %> prohibited this report_covid19 from being saved:</h2>
+
+      <ul>
+        <% report_covid19.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :collection_date %>
+    <%= form.text_field :collection_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :received_date %>
+    <%= form.text_field :received_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reported_date %>
+    <%= form.text_field :reported_date %>
+  </div>
+  <div class="field">
+    <%= form.label :patient_name %>
+    <%= form.text_field :patient_name %>
+  </div>
+  <div class="field">
+    <%= form.label :patient_hn %>
+    <%= form.text_field :patient_hn %>
+  </div>
+  <div class="field">
+    <%= form.label :patient_an %>
+    <%= form.text_field :patient_an %>
+  </div>
+  <div class="field">
+    <%= form.label :hospital_name %>
+    <%= form.text_field :hospital_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physician_name %>
+    <%= form.text_field :physician_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accepted_sample %>
+    <%= form.check_box :accepted_sample %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sample_type %>
+    <%= form.text_field :sample_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :result %>
+    <%= form.text_field :result %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_n1 %>
+    <%= form.text_field :target_n1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_n2 %>
+    <%= form.text_field :target_n2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_rp %>
+    <%= form.text_field :target_rp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reported_by %>
+    <%= form.text_field :reported_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirmed_by %>
+    <%= form.text_field :confirmed_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :approved_by %>
+    <%= form.text_field :approved_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_id %>
+    <%= form.text_field :report_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :token %>
+    <%= form.text_field :token %>
+  </div>
+
+  <div class="field">
+    <%= form.label :checksum %>
+    <%= form.text_field :checksum %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

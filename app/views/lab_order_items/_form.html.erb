@@ -1,0 +1,57 @@
+<%= form_with(model: lab_order_item) do |form| %>
+  <% if lab_order_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lab_order_item.errors.count, "error") %> prohibited this lab_order_item from being saved:</h2>
+
+      <ul>
+        <% lab_order_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lab_order_id %>
+    <%= form.text_field :lab_order_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :module_id %>
+    <%= form.text_field :module_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :module_name %>
+    <%= form.text_field :module_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_at %>
+    <%= form.datetime_select :start_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stop_at %>
+    <%= form.datetime_select :stop_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transaction_item_id %>
+    <%= form.text_field :transaction_item_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

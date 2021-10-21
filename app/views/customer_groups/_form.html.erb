@@ -1,0 +1,23 @@
+<%= form_with(model: customer_group) do |form| %>
+  <% if customer_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer_group.errors.count, "error") %> prohibited this customer_group from being saved:</h2>
+
+      <ul>
+        <% customer_group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<%=form_css%>
