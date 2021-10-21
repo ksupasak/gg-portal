@@ -1,2 +1,0 @@
-module ReportCovid19sHelper
-end
